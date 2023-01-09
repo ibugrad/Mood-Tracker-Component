@@ -1,0 +1,67 @@
+<template>
+    <template if:false={formSubmitted}>
+      <lightning-card title="How do you feel today young man ;D">
+        <lightning-button label="Submit" slot="actions" onclick={handleSubmit}></lightning-button>
+        
+        <form onsubmit={handleSubmit} action="https://lunacomics-dev-ed.develop.lightning.force.com/lightning/o/Mood__c/list?filterName=00B68000001FHAzEAO">
+          <table>
+            <tbody>
+              <tr>
+                <th>
+                  <lightning-button  value="Amazing" label="Amazing" title="Non-primary action" onclick={handleButtonClick} class="slds-m-left_x-small"></lightning-button>
+                </th> 
+                <th>  
+                  <lightning-button variant="brand" label="Crazy" value="Crazy" title="Primary action" onclick={handleButtonClick} class="slds-m-left_x-small"></lightning-button>
+                </th>
+                 <th>
+                  <lightning-button variant="brand-outline" label="Normal" value="Normal" title="Primary action with lighter look" onclick={handleButtonClick} class="slds-m-left_x-small"></lightning-button>
+                </th>
+                  <th> 
+                    <lightning-button variant="destructive" label="Not Good" value="Not Good" title="Destructive action" onclick={handleButtonClick} class="slds-m-left_x-small"></lightning-button>
+                  </th> 
+                  <th>  
+                    <lightning-button variant="destructive-text" label="Horrible" value="Horrible" title="Destructive action with a lighter look" onclick={handleButtonClick} class="slds-m-left_x-small"></lightning-button>
+                  </th>
+              </tr>
+          </tbody> 
+        </table>
+          <br>
+        <table>
+          <tbody>
+            <tr>
+              <th>
+                 <input type="radio" name="1" value="Amazing" onclick={handleButtonClick}>Amazing 
+               </th>
+            <th>
+              <input type="radio" name="1" value="Crazy" onclick={handleButtonClick}>Crazy
+            </th>
+            <th>
+              <input type="radio" name="1" value="Normal" onclick={handleButtonClick}> Normal
+            </th>
+            <th>
+             <input type="radio" name="1" value="Not Good" onclick={handleButtonClick}> Not Good
+            </th>
+            <th>
+            <input type="radio" name="1" value="Horrible" onclick={handleButtonClick}>   Horrible
+            </th>
+          </tr>
+         </tbody>
+        </table>
+
+          <br>
+        <div class="a1">Hmm, {message}</div>
+        
+        <lightning-input type="text" label="Mood" value={mood} onchange={handleChange}></lightning-input>
+        </form>
+
+
+        <br>
+        <p slot="footer">Made by Aysenur</p>
+      </lightning-card>
+    </template>
+
+    <lightning-card if:true={formSubmitted}>
+      <p class="bb">See you tomorrow ;D</p>
+    </lightning-card>
+  </template>
+  
