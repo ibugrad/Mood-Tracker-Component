@@ -2,6 +2,7 @@
     <template if:false={formSubmitted}>
       <lightning-card title="How do you feel today young man ;D">
         <lightning-button label="Submit" slot="actions" onclick={handleSubmit}></lightning-button>
+          
         
         <form onsubmit={handleSubmit} action="https://lunacomics-dev-ed.develop.lightning.force.com/lightning/o/Mood__c/list?filterName=00B68000001FHAzEAO">
           <table>
