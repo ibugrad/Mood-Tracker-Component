@@ -53,5 +53,3 @@ export default class moodTracke2 extends LightningElement {
   }
   }
 }
-
-.
